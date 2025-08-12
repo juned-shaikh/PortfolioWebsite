@@ -1,2 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
-@import "./assets/scss/steller.scss";
+/* Dr. Mubeen Khan Homeopathy Website - Global Styles */
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Import our custom styling system
+@import "./assets/scss/variables";
+@import "./assets/scss/mixins";
+@import "./assets/scss/components";
+
+// Global Reset and Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $text-dark;
+  background-color: $background-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Global Typography
+h1, h2, h3, h4, h5, h6 {
+  @include heading-primary;
+  margin-bottom: $spacing-md;
+}
+
+h1 { font-size: $font-size-4xl; }
+h2 { font-size: $font-size-3xl; }
+h3 { font-size: $font-size-2xl; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-base; }
+
+p {
+  @include body-text;
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $primary-green;
+  text-decoration: none;
+  transition: color $transition-normal;
+
+  &:hover {
+    color: $light-green;
+  }
+}
+
+// Global Layout
+.container {
+  @include container;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$spacing-md);
+}
+
+.col {
+  flex: 1;
+  padding: 0 $spacing-md;
+}
+
+.col-12 { flex: 0 0 100%; padding: 0 $spacing-md; }
+.col-6 { flex: 0 0 50%; padding: 0 $spacing-md; }
+.col-4 { flex: 0 0 33.333333%; padding: 0 $spacing-md; }
+.col-3 { flex: 0 0 25%; padding: 0 $spacing-md; }
+
+// Responsive Grid Classes
+.col-md-6 { 
+  padding: 0 $spacing-md;
+  @include tablet-up {
+    flex: 0 0 50%; 
+  }
+}
+
+.col-md-4 { 
+  padding: 0 $spacing-md;
+  @include tablet-up {
+    flex: 0 0 33.333333%; 
+  }
+}
+
+.col-lg-6 { 
+  padding: 0 $spacing-md;
+  @include desktop-up {
+    flex: 0 0 50%; 
+  }
+}
+
+.col-lg-4 { 
+  padding: 0 $spacing-md;
+  @include desktop-up {
+    flex: 0 0 33.333333%; 
+  }
+}
+
+@include mobile-only {
+  .col-6,
+  .col-4,
+  .col-3,
+  .col-md-6,
+  .col-md-4,
+  .col-lg-6,
+  .col-lg-4 {
+    flex: 0 0 100%;
+  }
+}
+
+// Responsive Images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Focus Styles for Accessibility
+*:focus {
+  outline: 2px solid $primary-green;
+  outline-offset: 2px;
+}

@@ -1,0 +1,8 @@
+// Import variables for component use
+@import "../assets/scss/variables";
+
+// App Component Specific Styles
+.app-container {
+  min-height: 100vh;
+  background-color: $background-white;
+}
