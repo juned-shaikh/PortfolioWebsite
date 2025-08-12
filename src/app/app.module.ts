@@ -7,14 +7,10 @@ import { AppComponent } from './app.component';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';        
 import { environment } from '../environments/environment';
-import { HeaderComponent } from './components/header/header.component';
-import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HeroComponent
   ],
   imports: [
     BrowserModule,
